@@ -1,13 +1,135 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Lobster&display=swap');
+
+/* Box sizing */
+*, *::before {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Body styles */
+body {
+  margin: 0;
+  font-family: "Roboto";
+  background: linear-gradient(white ,black);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: repeat-x;
+  min-height: 100vh;
+}
+
+/* Navbar container */
+.navbar-container {
+  width: 100%;
+}
+
+/* Navbar content */
+.navbar-content {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  color: white;
+}
+
+/* Navbar dropdown button on hover */
+.dropbtn:hover {
+  opacity: 0.5;
+}
+
+/* Navbar Dropdown */
+.drop-item {
+  cursor: pointer;
+}
+
+/* Navbar dropdown items on hover */
+.drop-item:hover {
+  opacity: 0.5;
+}
+
+/* Search container */
+.search-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Search input */
+.search-input {
+  width: 300px;
+  box-shadow: 0 0 10px;
+  font-family: "Roboto";
+  outline: none;
+}
+
+/* Search input on focus */
+.search-input:focus {
+  color: #555;
+}
+
+/* Search results container */
+.search-results-container {
+  font-family: "Roboto";
+  font-size: .75rem;
+  width: 50%;
+  max-width: 770px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Result box */
+.result-box {
+  display: none;
+}
+
+/* Title */
+.title {
+  font-weight: 900;
+}
+
+/* Tabs */
+.tabs {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+/* Footer content */
+.footer-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+
+/* App wrapper */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content wrapper */
+.content-wrapper {
+  flex: 1;
+}
+
+/* Footer */
+footer {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
 }
