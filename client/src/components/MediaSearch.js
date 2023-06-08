@@ -30,7 +30,7 @@ function MediaSearch({ mediaType, addMedia }) {
 
     // Calling the function to remove non alpha/num characters
     const cleanSearchValue = removeNonAlphaNum(searchValue);
-    const response = await axios.get(`/api/?term=${cleanSearchValue}&media=${media}`);
+    const response = await axios.get(`https://favour-a-tism2.vercel.app/api/?term=${cleanSearchValue}&media=${media}`);
     const data = response.data;
     const resultsArray = data.results;
 
