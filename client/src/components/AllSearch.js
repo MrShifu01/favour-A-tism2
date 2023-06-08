@@ -46,7 +46,7 @@ function AllSearch() {
       // Calling the function to remove non alpha/num characters
       const cleanSearchValue = removeNonAlphaNum(searchValue)
   
-      const response = await axios.get(`https://favour-a-tism2.vercel.app/api/?term=${cleanSearchValue}&media=${media}`)
+      const response = await axios.get(`https://favouratism.vercel.app/api/?term=${cleanSearchValue}&media=${media}`)
       const data = response.data
       const resultsArray = data.results
       if (resultsArray.length === 0) {
