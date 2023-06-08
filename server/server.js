@@ -1,5 +1,5 @@
 // Import the Express framework
-const express = require('express')
+const express = require('express');
 
 // Import CORS
 const cors = require('cors');
@@ -8,18 +8,17 @@ const cors = require('cors');
 const { router } = require('./router.js');
 
 // Import Helmet
-const helmet = require('helmet')
+const helmet = require('helmet');
 
 // Create an instance of the Express application
 const app = express();
 
 // Use helmet
-app.use(helmet())
+app.use(helmet());
 
 // Use CORS
 app.use(cors({
-  origin: ["https://favour-a-tism2-6cdf.vercel.app/", '*', 'http://localhost:3000']
-
+  origin: ["https://favour-a-tism2-6cdf.vercel.app", "http://localhost:3000"]
 }));
 
 // Set the port to either the value specified in the environment variable "PORT" or 8000
