@@ -17,7 +17,10 @@ const app = express();
 app.use(helmet())
 
 // Use CORS
-app.use(cors());
+app.use(cors({
+  origin: ["https://favour-a-tism2-6cdf.vercel.app/", '*', 'http://localhost:3000']
+
+}));
 
 // Set the port to either the value specified in the environment variable "PORT" or 8000
 const PORT = process.env.PORT || 8000;
