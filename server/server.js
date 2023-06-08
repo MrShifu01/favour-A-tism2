@@ -1,6 +1,9 @@
 // Import the Express framework
 const express = require('express')
 
+// Import CORS
+const cors = require('cors');
+
 // Import the router module from './router.js'
 const { router } = require('./router.js');
 
@@ -13,13 +16,8 @@ const app = express();
 // Use helmet
 app.use(helmet())
 
-// CORS
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
+// Use CORS
+app.use(cors());
 
 // Set the port to either the value specified in the environment variable "PORT" or 8000
 const PORT = process.env.PORT || 8000;
