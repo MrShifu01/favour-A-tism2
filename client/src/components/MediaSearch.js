@@ -13,6 +13,7 @@ function MediaSearch({ mediaType, addMedia }) {
   const [searchValue, setSearchValue] = useState('');
   const [emptyResults, setEmptyResults] = useState(false);
   const [searched, setSearched] = useState(false);
+  const [resultsArray, setResultsArray] = useState([])
   const searchResults = useSelector((state) => state.results.results);
 
   // Dynamic Selector
@@ -32,7 +33,7 @@ function MediaSearch({ mediaType, addMedia }) {
     const cleanSearchValue = removeNonAlphaNum(searchValue);
     const response = await axios.get(`/api/?term=${cleanSearchValue}&media=${media}`);
     const data = await response.data;
-    const resultsArray = data.results;
+    setResultsArray(data.results)
 
     if (resultsArray.length === 0) {
       setEmptyResults(true);
