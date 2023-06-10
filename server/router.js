@@ -1,5 +1,6 @@
 const express = require('express')
-const axios = require('axios')
+const axios = require('axios');
+const asyncHandler = require('./asyncHandler');
 
 // Create an instance of an Express Router
 const router = express.Router();
@@ -18,7 +19,7 @@ async function getResults(term, media) {
 }
 
 // Handle the HTTP GET request to get all results
-router.get('/', async (req, res) => {
+router.get('/', asyncHandler(async (req, res) => {
   // Retrieve the search term and media type from the query parameters
   const term = req.query.term;
   const media = req.query.media;
@@ -33,7 +34,7 @@ router.get('/', async (req, res) => {
     // Handle errors by sending a 500 status code and an error message
     res.status(500).send("Error retrieving results");
   }
-});
+}));
 
 // Export the router module
 module.exports = {
