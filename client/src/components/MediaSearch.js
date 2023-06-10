@@ -31,7 +31,7 @@ function MediaSearch({ mediaType, addMedia }) {
     // Calling the function to remove non alpha/num characters
     const cleanSearchValue = removeNonAlphaNum(searchValue);
     const response = await axios.get(`/api/?term=${cleanSearchValue}&media=${media}`);
-    const data = response.data;
+    const data = await response.data;
     const resultsArray = data.results;
 
     if (resultsArray.length === 0) {
