@@ -34,6 +34,7 @@ function MediaSearch({ mediaType, addMedia }) {
     const response = await axios.get(`/api/?term=${cleanSearchValue}&media=${media}`);
     const data = await response.data;
     setResultsArray(data.results)
+    console.log(resultsArray)
 
     if (resultsArray.length === 0) {
       setEmptyResults(true);
