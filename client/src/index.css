@@ -13,7 +13,8 @@
 body {
   margin: 0;
   font-family: "Roboto";
-  background: linear-gradient(white ,black);
+  background: linear-gradient(to right,gray, white ,gray
+  );
   background-size: cover;
   background-position: center top;
   background-repeat: repeat-x;
